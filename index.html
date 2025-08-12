@@ -21,6 +21,15 @@
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
+        .carousel-container {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+        }
+        .carousel-container::-webkit-scrollbar {
+            display: none;
+        }
     </style>
     
     <!-- Google tag (gtag.js) -->
@@ -95,8 +104,37 @@
         </div>
     </section>
 
+    <!-- Nueva Sección: Productos Destacados (Carrusel) -->
+    <section id="productos" class="bg-green-100 py-16 md:py-24">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-green-700">Productos Destacados</h2>
+            <div class="carousel-container flex gap-8 pb-4">
+                <!-- Producto 1 -->
+                <div class="flex-none w-64 bg-white p-6 rounded-2xl shadow-lg card">
+                    <img src="https://placehold.co/200x200/A3BE8C/FFFFFF?text=Queso+Artesanal" alt="Queso Artesanal" class="rounded-lg mx-auto mb-4">
+                    <h4 class="text-xl font-bold text-gray-800 mb-2">Queso Artesanal</h4>
+                    <p class="text-gray-600">Elaborado con leche fresca de vaca de la zona de Uco. Sabor único y tradicional.</p>
+                </div>
+                <!-- Producto 2 -->
+                <div class="flex-none w-64 bg-white p-6 rounded-2xl shadow-lg card">
+                    <img src="https://placehold.co/200x200/A3BE8C/FFFFFF?text=Yogurt+Natural" alt="Yogurt Natural" class="rounded-lg mx-auto mb-4">
+                    <h4 class="text-xl font-bold text-gray-800 mb-2">Yogurt Natural</h4>
+                    <p class="text-gray-600">Yogurt cremoso y sin aditivos, ideal para un desayuno saludable. 100% natural.</p>
+                </div>
+                <!-- Producto 3 -->
+                <div class="flex-none w-64 bg-white p-6 rounded-2xl shadow-lg card">
+                    <img src="https://placehold.co/200x200/A3BE8C/FFFFFF?text=Mantequilla+Casera" alt="Mantequilla Casera" class="rounded-lg mx-auto mb-4">
+                    <h4 class="text-xl font-bold text-gray-800 mb-2">Mantequilla Casera</h4>
+                    <p class="text-gray-600">Mantequilla tradicional hecha a mano, con un sabor incomparable.</p>
+                </div>
+                <!-- Agrega más productos aquí si lo deseas -->
+            </div>
+            <p class="text-gray-600 mt-4">Desliza para ver más productos.</p>
+        </div>
+    </section>
+
     <!-- Sección de Impacto -->
-    <section id="impacto" class="bg-green-100 py-16 md:py-24">
+    <section id="impacto" class="py-16 md:py-24">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-12 text-green-700">Impacto y Resultados</h2>
             <div class="grid md:grid-cols-3 gap-8">
@@ -141,7 +179,7 @@
     </section>
 
     <!-- Sección del Equipo -->
-    <section id="equipo" class="py-16 md:py-24">
+    <section id="equipo" class="bg-green-100 py-16 md:py-24">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-12 text-green-700">Nuestro Equipo</h2>
             <div class="grid md:grid-cols-3 gap-8">
@@ -173,6 +211,35 @@
         </div>
     </section>
 
+    <!-- Nueva Sección: Formulario de Contacto -->
+    <section id="contacto" class="py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-green-700">Contáctanos</h2>
+            <div class="max-w-xl mx-auto bg-white p-8 rounded-2xl shadow-lg card">
+                <form id="contactForm" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700">Nombre</label>
+                        <input type="text" id="name" name="name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500" required>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700">Correo Electrónico</label>
+                        <input type="email" id="email" name="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500" required>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700">Mensaje</label>
+                        <textarea id="message" name="message" rows="4" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500" required></textarea>
+                    </div>
+                    <div class="flex justify-center">
+                        <button type="submit" class="bg-green-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-green-700 transition duration-300">
+                            Enviar Mensaje
+                        </button>
+                    </div>
+                </form>
+                <div id="formMessage" class="mt-4 text-center"></div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-8 text-center rounded-t-3xl shadow-lg">
         <div class="container mx-auto px-4">
@@ -180,5 +247,84 @@
         </div>
     </footer>
 
+    <!-- Firebase y Lógica del Formulario -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // Firebase Initialization
+        const firebaseConfig = JSON.parse(typeof __firebase_config !== 'undefined' ? __firebase_config : '{}');
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        const auth = getAuth(app);
+        
+        let userId;
+        
+        async function authenticate() {
+            try {
+                // Check if an auth token is provided by the environment
+                if (typeof __initial_auth_token !== 'undefined') {
+                    await signInWithCustomToken(auth, __initial_auth_token);
+                } else {
+                    await signInAnonymously(auth);
+                }
+                userId = auth.currentUser.uid;
+                console.log("Firebase authenticated successfully.");
+            } catch (error) {
+                console.error("Firebase authentication failed:", error);
+            }
+        }
+
+        authenticate();
+
+        const form = document.getElementById('contactForm');
+        const formMessage = document.getElementById('formMessage');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            formMessage.textContent = 'Enviando...';
+            formMessage.classList.remove('text-red-500', 'text-green-500');
+            formMessage.classList.add('text-gray-500');
+
+            if (!userId) {
+                console.error("Authentication not complete. Retrying...");
+                await authenticate();
+                if (!userId) {
+                    formMessage.textContent = 'Error: No se pudo autenticar. Intenta de nuevo.';
+                    formMessage.classList.remove('text-gray-500');
+                    formMessage.classList.add('text-red-500');
+                    return;
+                }
+            }
+
+            const formData = new FormData(form);
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                message: formData.get('message'),
+                timestamp: new Date()
+            };
+
+            try {
+                // Path para datos públicos
+                const collectionPath = `artifacts/${appId}/public/data/contact-messages`;
+                await addDoc(collection(db, collectionPath), data);
+                formMessage.textContent = '¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.';
+                formMessage.classList.remove('text-gray-500');
+                formMessage.classList.add('text-green-500');
+                form.reset();
+            } catch (error) {
+                console.error("Error al enviar el mensaje:", error);
+                formMessage.textContent = 'Error al enviar el mensaje. Intenta de nuevo más tarde.';
+                formMessage.classList.remove('text-gray-500');
+                formMessage.classList.add('text-red-500');
+            }
+        });
+    </script>
+
 </body>
 </html>
+
