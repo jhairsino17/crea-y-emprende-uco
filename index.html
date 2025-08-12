@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crea y Emprende Uco</title>
+    <!-- Incluimos Tailwind CSS para un diseño moderno y responsive -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Estilos personalizados para un mejor aspecto */
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+    </style>
+    
+    <!-- Google tag (gtag.js) -->
+    <!-- IMPORTANTE: Reemplaza 'G-XXXXXXXXXX' con tu ID de medición de Google Analytics. -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Sección de Cabecera (Hero Section) -->
+    <header class="bg-green-600 text-white py-16 md:py-24 text-center rounded-b-3xl shadow-lg">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Crea y Emprende Uco</h1>
+            <p class="text-lg md:text-xl max-w-2xl mx-auto mb-8">
+                Creamos páginas digitales para ayudar a realizar marketing a los negocios rurales del centro poblado de Uco.
+            </p>
+            <a href="#proyecto" class="bg-yellow-400 text-green-800 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-yellow-300 transition duration-300">
+                Conoce nuestro proyecto
+            </a>
+        </div>
+    </header>
+
+    <!-- Sección "Nuestro Proyecto" -->
+    <section id="proyecto" class="py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-green-700">Nuestro Proyecto</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <!-- Problema -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg card">
+                        <h3 class="text-2xl font-bold text-green-600 mb-3">El Problema</h3>
+                        <p class="text-gray-600">
+                            Los negocios de Uco producen derivados lácteos de gran calidad, pero enfrentan una falta de promoción debido al acceso limitado a internet y a la ausencia de conocimientos en marketing digital. Esto afecta directamente sus ventas y calidad de vida.
+                        </p>
+                    </div>
+                    <!-- Solución -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg card">
+                        <h3 class="text-2xl font-bold text-green-600 mb-3">Nuestra Solución</h3>
+                        <p class="text-gray-600">
+                            Ofrecemos la creación de páginas digitales personalizadas y perfiles en redes sociales para que estos emprendedores puedan promocionar sus productos, conectar con nuevos clientes y recibir pedidos de manera sencilla.
+                        </p>
+                    </div>
+                </div>
+                <!-- Imagen representativa -->
+                <div class="hidden md:block">
+                    <img src="https://placehold.co/600x400/98C1D9/FFFFFF?text=Negocios+en+Uco" alt="Imagen de negocios en Uco" class="rounded-2xl shadow-lg w-full h-auto">
+                </div>
+            </div>
+            
+            <div class="mt-16 grid md:grid-cols-2 gap-12">
+                 <!-- Propuesta de Valor -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg card">
+                    <h3 class="text-2xl font-bold text-green-600 mb-3">Propuesta de Valor</h3>
+                    <p class="text-gray-600">
+                        Brindamos una solución accesible, económica y personalizada de marketing digital a negocios que nunca han tenido presencia online, ayudándoles a aumentar sus ventas y mejorar sus ingresos familiares.
+                    </p>
+                </div>
+                <!-- Innovación -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg card">
+                    <h3 class="text-2xl font-bold text-green-600 mb-3">Innovación</h3>
+                    <p class="text-gray-600">
+                        Nuestra innovación radica en adaptar herramientas digitales sencillas (páginas web, redes sociales, códigos QR) a contextos rurales con bajo acceso a internet, combinando creatividad y soporte personalizado.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Impacto -->
+    <section id="impacto" class="bg-green-100 py-16 md:py-24">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-green-700">Impacto y Resultados</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Impacto Social -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg card">
+                    <div class="flex justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-green-600">Impacto Social</h3>
+                    <p class="text-gray-600">
+                        Mejora de la economía familiar, inclusión digital y mayor visibilidad del trabajo local en la comunidad de Uco.
+                    </p>
+                </div>
+                <!-- Impacto Ambiental -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg card">
+                    <div class="flex justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.31-.617a1.858 1.858 0 01-1.023-.547L9.98 10.18a1.858 1.858 0 00-1.023-.547l-2.31-.617a2 2 0 00-1.022.547l-2.31.617a1.858 1.858 0 01-1.023.547L3.98 12.18a1.858 1.858 0 00-1.023.547l-2.31.617a2 2 0 00-1.022-.547L0 12.18l-2.31-.617a1.858 1.858 0 01-1.023-.547zM19 12a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-green-600">Impacto Ambiental</h3>
+                    <p class="text-gray-600">
+                        Reducción de la impresión de volantes y afiches, promoviendo una solución digital más sostenible y ecológica.
+                    </p>
+                </div>
+                <!-- Lecciones Aprendidas -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg card">
+                    <div class="flex justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944c-.646 0-1.282.083-1.9.24A1.97 1.97 0 009.11 5.378M12 11c0 3.313-2.687 6-6 6-3.314 0-6-2.687-6-6s2.686-6 6-6c3.313 0 6 2.687 6 6z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-green-600">Lecciones Aprendidas</h3>
+                    <p class="text-gray-600">
+                        La gente sí quiere aprender tecnología y las redes sociales son una herramienta clave. El trabajo en equipo y la empatía son fundamentales para el éxito.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección del Equipo -->
+    <section id="equipo" class="py-16 md:py-24">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-green-700">Nuestro Equipo</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Miembro 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg card">
+                    <img src="https://placehold.co/150x150/A3BE8C/FFFFFF?text=Miembro+1" alt="Miembro del Equipo 1" class="rounded-full mx-auto mb-4">
+                    <h4 class="text-lg font-bold text-gray-800">Nombre del Integrante</h4>
+                    <p class="text-gray-500">Rol en el Equipo</p>
+                </div>
+                <!-- Miembro 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg card">
+                    <img src="https://placehold.co/150x150/A3BE8C/FFFFFF?text=Miembro+2" alt="Miembro del Equipo 2" class="rounded-full mx-auto mb-4">
+                    <h4 class="text-lg font-bold text-gray-800">Nombre del Integrante</h4>
+                    <p class="text-gray-500">Rol en el Equipo</p>
+                </div>
+                <!-- Miembro 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg card">
+                    <img src="https://placehold.co/150x150/A3BE8C/FFFFFF?text=Miembro+3" alt="Miembro del Equipo 3" class="rounded-full mx-auto mb-4">
+                    <h4 class="text-lg font-bold text-gray-800">Nombre del Integrante</h4>
+                    <p class="text-gray-500">Rol en el Equipo</p>
+                </div>
+            </div>
+            <!-- Asesor -->
+            <div class="mt-12">
+                <h4 class="text-2xl font-bold text-gray-800">Docente Asesor</h4>
+                <p class="text-lg text-gray-600">Nombre del Docente</p>
+                <p class="text-sm text-gray-500">Código Modular</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 text-center rounded-t-3xl shadow-lg">
+        <div class="container mx-auto px-4">
+            <p>&copy; 2025 Proyecto Crea y Emprende Uco. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
