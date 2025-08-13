@@ -416,7 +416,15 @@
         import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
         // Firebase Initialization
-        const firebaseConfig = JSON.parse(typeof __firebase_config !== 'undefined' ? __firebase_config : '{}');
+        const firebaseConfig = {
+          apiKey: "AIzaSyCI9UHmWfR8WGkbo-dNVGKwtynzEa_ButE",
+          authDomain: "emprendimieto-uco.firebaseapp.com",
+          projectId: "emprendimieto-uco",
+          storageBucket: "emprendimieto-uco.firebasestorage.app",
+          messagingSenderId: "567820490048",
+          appId: "1:567820490048:web:9d4415fde6de8b1df156a5",
+          measurementId: "G-F9D2GCN5QY"
+        };
         const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
 
         if (!firebaseConfig.apiKey) {
@@ -696,6 +704,7 @@
     </script>
 </body>
 </html>
+
 
 
 
